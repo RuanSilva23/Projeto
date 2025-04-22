@@ -5,13 +5,13 @@ import java.util.Arrays;
 public class FibonacciComMemo implements FibonacciStrategy {
     private int[] memo;
 
-    public int calcular(int n) {
-        memo = new int[n + 1];
-        Arrays.fill(memo, -1);
-        return calcularComMemo(n);
+    public FibonacciComMemo(int[] memo){
+        this.memo = memo;
+        Arrays.fill(this.memo, -1);
+
     }
 
-    private int calcularComMemo(int n){
+    public int calcular(int n){
 
         if (memo[n] != -1){
             return memo[n];
@@ -19,7 +19,7 @@ public class FibonacciComMemo implements FibonacciStrategy {
         if (n == 0 || n == 1){
             return n;
         }else {
-            memo[n] = calcularComMemo(n - 1) + calcularComMemo(n - 2);
+            memo[n] = calcular(n - 1) + calcular(n - 2);
             return memo[n];
         }
     }
