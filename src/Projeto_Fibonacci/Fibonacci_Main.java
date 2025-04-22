@@ -81,8 +81,7 @@ public class Fibonacci_Main {
         System.out.println("0 - Sair ");
         System.out.print("Escolha uma opção: ");
 
-        int opcao = scanner.nextInt();
-        return opcao;
+        return scanner.nextInt();
     }
 
     public static int quantidadeTermos(Scanner scanner){
