@@ -35,6 +35,11 @@ public class Fibonacci_Main {
 
             int termos = scanner.nextInt();
 
+            if (termos<0){
+                System.out.println("Coloque números não negativos!!");
+                continue;
+            }
+
             switch (opcao){
                 case 1:{
                     estrategia = new FibonacciRecursivaSimples();
