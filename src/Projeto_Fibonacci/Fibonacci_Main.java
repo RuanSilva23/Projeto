@@ -10,15 +10,8 @@ public class Fibonacci_Main {
         boolean continuar = true;
 
         while (continuar){
-            System.out.println("===========MENU=============");
-            System.out.println("Escolha uma das alternativa abaixo:");
-            System.out.println("1 - Fibonacci Recursiva Simples ");
-            System.out.println("2 - Fibonacci com Memoização");
-            System.out.println("3 - Fibonacci Iterativa ");
-            System.out.println("0 - Sair ");
-            System.out.print("Escolha uma opção: ");
 
-            int opcao = scanner.nextInt();
+            int opcao = exibirMenu(scanner);
             FibonacciStrategy estrategia = null;
 
             if (opcao==0){
@@ -31,14 +24,8 @@ public class Fibonacci_Main {
                 continue;
             }
 
-            System.out.print("Quantos termos: ");
+            int termos = quantidadeTermos(scanner);
 
-            int termos = scanner.nextInt();
-
-            if (termos<0){
-                System.out.println("Coloque números não negativos!!");
-                continue;
-            }
 
             switch (opcao){
                 case 1:{
@@ -57,10 +44,11 @@ public class Fibonacci_Main {
                 }
 
                 default:{
-                    System.out.println("Opção Invalida. Tente novamente!! ");
-                    continue;
+                    assert false;
                 }
             }
+
+            System.out.println(" ");
 
             System.out.println("A Sequência de Fibonacci: ");
 
@@ -70,14 +58,44 @@ public class Fibonacci_Main {
             }
             long fim = System.nanoTime();
 
-            double nano_segundo = (fim - inicio)/1_000_000.0;
+            double nano_milisegundo = (fim - inicio)/1_000_000.0;
 
-            System.out.printf("\nTempo de execução: %.4f milissegundos.\n", nano_segundo );
+            System.out.println(" ");
+
+            System.out.printf("\nTempo de execução: %.4f milissegundos.\n", nano_milisegundo );
 
             System.out.println( );
 
 
         }
         scanner.close();
+    }
+    public static int exibirMenu(Scanner scanner){
+        System.out.println("===========MENU=============");
+        System.out.println(" ");
+        System.out.println("Escolha uma das alternativa abaixo:");
+        System.out.println(" ");
+        System.out.println("1 - Fibonacci Recursiva Simples ");
+        System.out.println("2 - Fibonacci com Memoização");
+        System.out.println("3 - Fibonacci Iterativa ");
+        System.out.println("0 - Sair ");
+        System.out.print("Escolha uma opção: ");
+
+        int opcao = scanner.nextInt();
+        return opcao;
+    }
+
+    public static int quantidadeTermos(Scanner scanner){
+        int termos;
+        do {
+            System.out.print("Quantos termos: ");
+            termos = scanner.nextInt();
+
+            if (termos < 0){
+                System.out.println("Coloque números não negativos!!");
+            }
+        }while(termos < 0);
+
+        return termos;
     }
 }
