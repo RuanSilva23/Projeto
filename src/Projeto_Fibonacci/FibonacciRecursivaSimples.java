@@ -1,11 +1,13 @@
 package Projeto_Fibonacci;
 
-public class FibonacciRecursivaSimples {
-    public static int calculoRecursivaSimples(int n){
+public class FibonacciRecursivaSimples implements FibonacciStrategy {
+    @Override
+    public int calcular(int n) {
+
         if (n == 0 || n == 1){
             return n;
         }else {
-            return calculoRecursivaSimples(n - 1) + calculoRecursivaSimples(n - 2);
+            return calcular(n - 1) + calcular(n - 2);
         }
     }
 }
