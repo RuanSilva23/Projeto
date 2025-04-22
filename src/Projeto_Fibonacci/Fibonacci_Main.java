@@ -63,9 +63,14 @@ public class Fibonacci_Main {
             }
 
             System.out.println("A Sequência de Fibonacci: ");
+
+            long inicio = System.nanoTime();
             for (int i = 0; i <= termos; i++){
                 System.out.print(estrategia.calcular(i) + " ");
             }
+            long fim = System.nanoTime();
+            System.out.println("\nO tempo de execução " + (fim-inicio) + " nanosegundos.");
+
             System.out.println( );
 
 
