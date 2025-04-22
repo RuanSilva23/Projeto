@@ -16,6 +16,42 @@ public class Fibonacci_Main {
             System.out.println(" ");
             System.out.println(" ");
 
+            int opcao = scanner.nextInt();
+
+            if (opcao==0){
+                continuar = false;
+                System.out.println();
+                continue;
+            } else if (opcao > 4 || opcao < 0) {
+                System.out.println(" ");
+                continue;
+            }
+
+            System.out.println(" ");
+
+            int n = scanner.nextInt();
+
+            switch (opcao){
+                case 1:{
+
+                    break;
+                }
+
+                case 2:{
+
+                    break;
+                }
+
+                case 3:{
+
+                    break;
+                }
+
+                default:{
+                    System.out.println(" ");
+                    break;
+                }
+            }
 
 
         }
