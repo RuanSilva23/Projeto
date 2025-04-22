@@ -69,7 +69,10 @@ public class Fibonacci_Main {
                 System.out.print(estrategia.calcular(i) + " ");
             }
             long fim = System.nanoTime();
-            System.out.println("\nO tempo de execução " + (fim-inicio) + " nanosegundos.");
+
+            double nano_segundo = (fim - inicio)/1_000_000.0;
+
+            System.out.printf("\nTempo de execução: %.4f milissegundos.\n", nano_segundo );
 
             System.out.println( );
 
