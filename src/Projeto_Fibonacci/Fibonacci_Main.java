@@ -14,33 +14,39 @@ public class Fibonacci_Main {
             int opcao = exibirMenu(scanner);
             FibonacciStrategy estrategia = null;
 
-            if (opcao==0){
-                continuar = false;
-                System.out.println("Obrigado por usar");
-                System.out.println("Encerrando......... ");
-                continue;
-            } else if (opcao > 4 || opcao < 0) {
+            MetodosFibo metodo  = MetodosFibo.fromCodigo(opcao);
+
+            if (metodo == null) {
                 System.out.println("Opção invalida!! Tente novamente!!");
                 continue;
             }
 
+
             int termos = quantidadeTermos(scanner);
 
 
-            switch (opcao){
-                case 1:{
+
+            switch (metodo){
+                case RECURSIVO_SIMPLES:{
                     estrategia = new FibonacciRecursivaSimples();
                     break;
                 }
 
-                case 2:{
+                case MEMOIZACAO:{
                     estrategia = new FibonacciComMemo(Arrays.copyOf(new int[termos + 1], termos + 1));
                     break;
                 }
 
-                case 3:{
+                case INTERATIVA:{
                     estrategia = new FibonacciIterativa();
                     break;
+                }
+
+                case SAIR:{
+                    continuar = false;
+                    System.out.println("Obrigado por usar");
+                    System.out.println("Encerrando......... ");
+                    continue;
                 }
 
                 default:{
