@@ -16,6 +16,8 @@ public class Fibonacci_Main {
 
             MetodosFibo metodo  = MetodosFibo.fromCodigo(opcao);
 
+
+
             if (metodo == null) {
                 System.out.println("Opção invalida!! Tente novamente!!");
                 continue;
@@ -23,6 +25,9 @@ public class Fibonacci_Main {
 
 
             int termos = quantidadeTermos(scanner);
+
+
+
 
 
             switch (metodo){
@@ -100,6 +105,12 @@ public class Fibonacci_Main {
                 default:{
                     assert false;
                 }
+            }
+
+            if (metodo != MetodosFibo.COMPARAR_TODAS && metodo != MetodosFibo.SAIR){
+                BenchmarkFibonacci benckmark = new BenchmarkFibonacci(estrategia, termos);
+                double tempoExecucao = benckmark.executar();
+                System.out.printf("\nTempo de execução com Benchmark: %.4f milissegundos.\n", tempoExecucao);
             }
 
             System.out.println(" ");
