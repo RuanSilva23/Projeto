@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Aproveitamento {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=======================");
+        System.out.println("Aproveitamento do Aluno");
+        System.out.println("=======================");
+        System.out.print("A 1° Nota: ");
+        int nota1 = scanner.nextInt();
+        System.out.print("A 2° Nota: ");
+        int nota2 = scanner.nextInt();
+        System.out.print("A 3° Nota: ");
+        int nota3 = scanner.nextInt();
+        System.out.print("A 4° Nota: ");
+        int nota4 = scanner.nextInt();
+
+        double mediaTotal = (nota1 + nota2 + nota3 + nota4)/4;
+
+        System.out.println("Sua média foi de " + mediaTotal);
+        System.out.println("Seu aproveitameto foi: ");
+
+        if (mediaTotal > 9){
+            System.out.println("Aproveitamento A ");
+
+        } else if (mediaTotal < 9 && mediaTotal >= 7 ) {
+            System.out.println("Aproveitamento B ");
+
+        } else if (mediaTotal < 7 && mediaTotal >= 6) {
+            System.out.println("Aproveitamento C ");
+
+        } else if (mediaTotal < 6 && mediaTotal >= 5 ) {
+            System.out.println("Aproveitamento D ");
+
+        } else if (mediaTotal < 5 && mediaTotal >= 4) {
+            System.out.println("Aproveitamento E ");
+
+        }else {
+            System.out.println("Aproveitamento F ");
+        }
+    }
+}
