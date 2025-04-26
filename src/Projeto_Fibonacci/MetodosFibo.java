@@ -4,6 +4,7 @@ public enum MetodosFibo {
     RECURSIVO_SIMPLES,
     MEMOIZACAO,
     INTERATIVA,
+    COMPARAR_TODAS,
     SAIR;
 
     public static  MetodosFibo fromCodigo(int codigo){
@@ -16,6 +17,9 @@ public enum MetodosFibo {
 
             case 3:
                 return INTERATIVA;
+
+            case 4:
+                return COMPARAR_TODAS;
 
             case 0:
                 return SAIR;
