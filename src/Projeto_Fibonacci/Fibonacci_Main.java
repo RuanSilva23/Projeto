@@ -28,8 +28,6 @@ public class Fibonacci_Main {
 
 
 
-
-
             switch (metodo){
                 case RECURSIVO_SIMPLES:{
                     estrategia = new FibonacciRecursivaSimples();
