@@ -4,28 +4,47 @@ public class Aproveitamento {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        double mediaTotal = nota1(scanner);
+        boolean continua = true;
 
-        System.out.println("Sua média foi de " + mediaTotal);
-        System.out.println("Seu aproveitameto foi: ");
+        while (continua) {
+            double mediaTotal = nota1(scanner);
 
-        if (mediaTotal > 9){
-            System.out.println("Aproveitamento A ");
+            System.out.println("Sua média foi de " + mediaTotal);
+            System.out.println("Seu aproveitameto foi: ");
 
-        } else if (mediaTotal < 9 && mediaTotal >= 7 ) {
-            System.out.println("Aproveitamento B ");
+            if (mediaTotal > 9) {
+                System.out.println("Aproveitamento A ");
 
-        } else if (mediaTotal < 7 && mediaTotal >= 6) {
-            System.out.println("Aproveitamento C ");
+            } else if (mediaTotal < 9 && mediaTotal >= 7) {
+                System.out.println("Aproveitamento B ");
 
-        } else if (mediaTotal < 6 && mediaTotal >= 5 ) {
-            System.out.println("Aproveitamento D ");
+            } else if (mediaTotal < 7 && mediaTotal >= 6) {
+                System.out.println("Aproveitamento C ");
 
-        } else if (mediaTotal < 5 && mediaTotal >= 4) {
-            System.out.println("Aproveitamento E ");
+            } else if (mediaTotal < 6 && mediaTotal >= 5) {
+                System.out.println("Aproveitamento D ");
 
-        }else {
-            System.out.println("Aproveitamento F ");
+            } else if (mediaTotal < 5 && mediaTotal >= 4) {
+                System.out.println("Aproveitamento E ");
+
+            } else {
+                System.out.println("Aproveitamento F ");
+            }
+
+            if (mediaTotal > 6) {
+                System.out.println("Vocé foi Aprovado");
+            } else {
+                System.out.println("Vocé está Reprovado");
+            }
+
+            System.out.println("Você quer continuar? [S = 1 / N = 2]");
+            int condicao = scanner.nextInt();
+            if (condicao == 1){
+                System.out.println("Próximo notas");
+            } else {
+                continua = false;
+            }
+
         }
     }
 
@@ -42,8 +61,8 @@ public class Aproveitamento {
         System.out.print("A 4° Nota: ");
         int nota4 = scanner.nextInt();
 
-        double resultado = (nota1 + nota2 + nota3 + nota4) / 4;
-        return resultado;
+        return  (double) (nota1 + nota2 + nota3 + nota4) / 4;
+
     }
 
 
