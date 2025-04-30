@@ -14,34 +14,36 @@ public class Interface {
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
-            switch (opcao){
-                case 1:{
+            NomeMetodos codigo = NomeMetodos.fromCodigo(opcao);
+
+            switch (codigo){
+                case ADICIONAR:{
                     System.out.println("Digite a descrição da tarefa: ");
                     String descricao = scanner.nextLine();
                     gerenciador.adicionarTarefas(descricao);
                     break;
                 }
 
-                case 2:{
+                case LISTAR:{
                     gerenciador.listarTarefas();
                     break;
                 }
 
-                case 3:{
+                case CONCLUIR:{
                     System.out.println("Digite o ID da tarefa a concluir: ");
                     int idConcluir = scanner.nextInt();
                     gerenciador.concluirTarefas(idConcluir);
                     break;
                 }
 
-                case 4:{
+                case REMOVER:{
                     System.out.println("Digite o ID da tarefa a remover: ");
                     int idRemover = scanner.nextInt();
                     gerenciador.removerTarefa(idRemover);
                     break;
                 }
 
-                case 5:{
+                case EDITAR:{
                     System.out.println("Digite o ID da tarefa a editar: ");
                     int idEditar = scanner.nextInt();
                     scanner.nextLine();
@@ -52,7 +54,7 @@ public class Interface {
 
                 }
 
-                case 0:{
+                case SAIR:{
                     continuar = false;
                     System.out.println("Encerrando... Obrigado!");
                     break;
