@@ -4,19 +4,7 @@ public class Aproveitamento {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=======================");
-        System.out.println("Aproveitamento do Aluno");
-        System.out.println("=======================");
-        System.out.print("A 1° Nota: ");
-        int nota1 = scanner.nextInt();
-        System.out.print("A 2° Nota: ");
-        int nota2 = scanner.nextInt();
-        System.out.print("A 3° Nota: ");
-        int nota3 = scanner.nextInt();
-        System.out.print("A 4° Nota: ");
-        int nota4 = scanner.nextInt();
-
-        double mediaTotal = (nota1 + nota2 + nota3 + nota4)/4;
+        double mediaTotal = nota1(scanner);
 
         System.out.println("Sua média foi de " + mediaTotal);
         System.out.println("Seu aproveitameto foi: ");
@@ -40,4 +28,23 @@ public class Aproveitamento {
             System.out.println("Aproveitamento F ");
         }
     }
+
+    public static double nota1(Scanner scanner){
+        System.out.println("=======================");
+        System.out.println("Aproveitamento do Aluno");
+        System.out.println("=======================");
+        System.out.print("A 1° Nota: ");
+        int nota1 = scanner.nextInt();
+        System.out.print("A 2° Nota: ");
+        int nota2 = scanner.nextInt();
+        System.out.print("A 3° Nota: ");
+        int nota3 = scanner.nextInt();
+        System.out.print("A 4° Nota: ");
+        int nota4 = scanner.nextInt();
+
+        double resultado = (nota1 + nota2 + nota3 + nota4) / 4;
+        return resultado;
+    }
+
+
 }
