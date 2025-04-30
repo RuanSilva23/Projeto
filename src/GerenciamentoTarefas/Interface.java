@@ -11,8 +11,14 @@ public class Interface {
 
         while (continuar){
             exibirMenu();
-            int opcao = scanner.nextInt();
+            int opcao = opcoes(scanner);
             scanner.nextLine();
+
+            if (opcao<0 || opcao>5){
+                System.out.println("Opção não encontrada! Tente novamente.");
+                System.out.println();
+                continue;
+            }
 
             NomeMetodos codigo = NomeMetodos.fromCodigo(opcao);
 
@@ -79,5 +85,9 @@ public class Interface {
         System.out.println("5 - Editar Tarefa");
         System.out.println("0 - Sair");
         System.out.print("Escolha uma opção: ");
+    }
+
+    public static int opcoes(Scanner scanner){
+        return scanner.nextInt();
     }
 }
