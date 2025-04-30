@@ -14,7 +14,8 @@ public class Fibonacci_Main {
             int opcao = exibirMenu(scanner);
             FibonacciStrategy estrategia = null;
 
-            MetodosFibo metodo  = MetodosFibo.fromCodigo(opcao);
+
+            MetodosFibo metodo  = Projeto_Fibonacci.MetodosFibo.fromCodigo(opcao);
 
 
 

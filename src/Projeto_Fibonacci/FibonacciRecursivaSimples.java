@@ -1,6 +1,6 @@
 package Projeto_Fibonacci;
 
-public class FibonacciRecursivaSimples implements FibonacciStrategy {
+public class FibonacciRecursivaSimples implements FibonacciStrategy{
     @Override
     public int calcular(int n) {
 
