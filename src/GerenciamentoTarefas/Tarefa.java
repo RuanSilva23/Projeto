@@ -27,11 +27,11 @@ public class Tarefa {
         this.descricao = NovaDescricao;
     }
 
-    public void MarcarComoConcluida(){
+    public void marcarComoConcluida(){
         this.concluida = true;
     }
 
-    public String ToString(){
+    public String toString(){
         return String.format("[%d] %s - %s", id, descricao, (concluida ? "Concluida" : "Pendente") );
     }
 }
