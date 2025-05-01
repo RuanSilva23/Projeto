@@ -23,19 +23,51 @@ public class Interface {
 
             switch (codigo){
                 case ADICIONAR:{
-                    System.out.println("Testando");
+                    scanner.nextLine();
+
+                   System.out.print("Digite o nome do aluno: ");
+                   String aluno = scanner.nextLine();
+
+
+                   System.out.print("Digite a idade do aluno: ");
+                   int idade = scanner.nextInt();
+                   scanner.nextLine();
+
+                   System.out.print("Qual o curso: ");
+                   String curso = scanner.nextLine();
+
+                   cadastro.adicionarAluno(aluno, idade, curso);
                     break;
                 }
                 case CONSULTAR:{
-                    System.out.println("Testando 2");
+                    cadastro.listarAlunos();
                     break;
                 }
                 case ATUALIZAR:{
-                    System.out.println("Testando 3");
+                    System.out.println("Digite o ID para ser atualizado: ");
+                    int alunoAtualiza = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Nome do aluno: ");
+                    String novoNome = scanner.nextLine();
+
+                    System.out.print("A idade do aluno: ");
+                    int novaIdade = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("O curso do aluno: ");
+                    String novoCurso = scanner.nextLine();
+
+                    cadastro.atualizarAluno(alunoAtualiza, novoNome, novaIdade, novoCurso);
+
                     break;
                 }
                 case DELETAR:{
-                    System.out.println("Testando 4");
+                    System.out.println("Digite o ID para remover: ");
+                    int alunoDelete = scanner.nextInt();
+                    scanner.nextLine();
+
+                    cadastro.deleteAluno(alunoDelete);
                     break;
                 }
                 case SAIR:{
@@ -54,6 +86,7 @@ public class Interface {
 
 
         }
+        scanner.close();
     }
     public static int exibirMenu(Scanner scanner){
         System.out.println("------ Cadastro de Aluno -------- ");
