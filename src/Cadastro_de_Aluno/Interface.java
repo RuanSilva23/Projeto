@@ -1,0 +1,70 @@
+package Cadastro_de_Aluno;
+
+import java.util.Scanner;
+
+public class Interface {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        CadastroAluno cadastro = new CadastroAluno();
+
+        boolean continuar = true;
+
+        while (continuar){
+
+            int Leropcao = exibirMenu(scanner);
+
+            if (Leropcao >= 6 || Leropcao < 1){
+                System.out.println("Opção invalida, Tente novamente");
+                continue;
+            }
+
+            Metodos codigo = Metodos.fromCodigo(Leropcao);
+
+            switch (codigo){
+                case ADICIONAR:{
+                    System.out.println("Testando");
+                    break;
+                }
+                case CONSULTAR:{
+                    System.out.println("Testando 2");
+                    break;
+                }
+                case ATUALIZAR:{
+                    System.out.println("Testando 3");
+                    break;
+                }
+                case DELETAR:{
+                    System.out.println("Testando 4");
+                    break;
+                }
+                case SAIR:{
+                    continuar = false;
+                    System.out.println("Obrigado por Usar.");
+                    System.out.println("Encerrando......");
+                    break;
+                }
+                case INVALIDO:{
+                    System.out.println("Opção inválida.");
+                    break;
+                }
+            }
+
+
+
+
+        }
+    }
+    public static int exibirMenu(Scanner scanner){
+        System.out.println("------ Cadastro de Aluno -------- ");
+        System.out.println("1 - Cadastro do Aluno ");
+        System.out.println("2 - Consultar listar dos alunos ");
+        System.out.println("3 - Atualizar aluno ");
+        System.out.println("4 - Remover aluno ");
+        System.out.println("5 - Sair ");
+        System.out.print("Qual opção escolhida: ");
+        return scanner.nextInt();
+
+
+    }
+}
