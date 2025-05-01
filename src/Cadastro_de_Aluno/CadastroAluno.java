@@ -64,4 +64,27 @@ public class CadastroAluno {
         }
 
     }
+
+    public void carregardoArquivo(){
+        File arquivo = new File("alunos.txt");
+        if (!arquivo.exists()) return;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))){
+            String linha;
+            while ((linha = reader.readLine()) != null){
+                String[] partes = linha.split(";");
+                int id = Integer.parseInt(partes[0]);
+                String nomeAluno = partes[1];
+                int idade = Integer.parseInt(partes[2]);
+                String curso = partes[3];
+
+                alunos.add(new Aluno(id, nomeAluno, idade, curso));
+                if (id >=proximoId){
+                    proximoId = id + 1;
+                }
+            }
+        }catch (IOException e){
+            System.out.println("Erro ao abrir o arquivo " + e.getMessage());
+        }
+    }
 }
