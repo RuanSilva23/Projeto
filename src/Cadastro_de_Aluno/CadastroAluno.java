@@ -24,15 +24,22 @@ public class CadastroAluno {
     }
 
     public void atualizarAluno(int id, String novoAluno, int novaIdade, String novoCurso){
+
+        boolean encontrado = false;
+
         for (Aluno a : alunos){
             if (a.getId() == id){
                 a.setAluno(novoAluno);
                 a.setIdade(novaIdade);
                 a.setCurso(novoCurso);
                 System.out.println("Alteração feita com sucesso.");
+                encontrado = true;
+                break;
             }
         }
-        System.out.println("Aluno não encontrado.");
+        if(!encontrado) {
+            System.out.println("Aluno não encontrado.");
+        }
     }
 
     public void deleteAluno(int id){
