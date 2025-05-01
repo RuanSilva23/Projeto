@@ -13,7 +13,7 @@ public class Interface {
         boolean continuar = true;
 
         while (continuar){
-           int Leropcao = ExibicaoDoMenu.exibirMenu();
+           int Leropcao = ExibicaoDoMenu.exibirMenu(scanner);
 
             if (Leropcao >= 6 || Leropcao < 1){
                 System.out.println("Opção invalida, Tente novamente");
@@ -27,10 +27,21 @@ public class Interface {
 
                    System.out.print("Digite o nome do aluno: ");
                    String aluno = scanner.nextLine();
+                   if (aluno.isEmpty()){
+                       Mensagem.alunoNaopodeVazio();
+                       continue;
+                   }
 
 
                    System.out.print("Digite a idade do aluno: ");
                    int idade = scanner.nextInt();
+
+                    if (idade < 0){
+                       Mensagem.idadeNaoNegativa();
+                       continue;
+                   }
+
+
                    scanner.nextLine();
 
                    System.out.print("Qual o curso: ");
@@ -52,9 +63,16 @@ public class Interface {
 
                     System.out.print("Nome do aluno: ");
                     String novoNome = scanner.nextLine();
-
+                    if (novoNome.isEmpty()){
+                        Mensagem.alunoNaopodeVazio();
+                        continue;
+                    }
                     System.out.print("A idade do aluno: ");
                     int novaIdade = scanner.nextInt();
+                    if (novaIdade < 0){
+                        Mensagem.idadeNaoNegativa();
+                        continue;
+                    }
                     scanner.nextLine();
 
                     System.out.print("O curso do aluno: ");
@@ -66,7 +84,7 @@ public class Interface {
                 }
 
                 case DELETAR:{
-                    System.out.println("Digite o ID para remover: ");
+                    System.out.println("Digite o ID para a remoção: ");
                     int alunoDelete = scanner.nextInt();
                     scanner.nextLine();
 
