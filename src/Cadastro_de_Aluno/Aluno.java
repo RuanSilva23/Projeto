@@ -6,9 +6,9 @@ public class Aluno {
     private int idade;
     private String curso;
 
-    public Aluno(int id, String aluno, int idade, String curso){
+    public Aluno(int id, String nomeAluno, int idade, String curso){
         this.id = id;
-        this.aluno = aluno;
+        this.aluno = nomeAluno;
         this.idade = idade;
         this.curso = curso;
     }
@@ -41,7 +41,7 @@ public class Aluno {
         this.curso = curso;
     }
 
-    public String ToString(){
-        return String.format("ID: %d | Nome: %s| Idade: %d | Curso: %s", id, aluno, idade, curso);
+    public String toString(){
+        return String.format("ID: %d | Nome: %s | Idade: %d | Curso: %s", id, aluno, idade, curso);
     }
 }
