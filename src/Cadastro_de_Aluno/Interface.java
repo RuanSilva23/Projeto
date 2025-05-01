@@ -25,7 +25,6 @@ public class Interface {
             switch (codigo){
                 case ADICIONAR:{
 
-
                    System.out.print("Digite o nome do aluno: ");
                    String aluno = scanner.nextLine();
 
@@ -40,10 +39,12 @@ public class Interface {
                    cadastro.adicionarAluno(aluno, idade, curso);
                     break;
                 }
+
                 case CONSULTAR:{
                     cadastro.listarAlunos();
                     break;
                 }
+
                 case ATUALIZAR:{
                     System.out.println("Digite o ID para ser atualizado: ");
                     int alunoAtualiza = scanner.nextInt();
@@ -63,6 +64,7 @@ public class Interface {
 
                     break;
                 }
+
                 case DELETAR:{
                     System.out.println("Digite o ID para remover: ");
                     int alunoDelete = scanner.nextInt();
@@ -71,21 +73,19 @@ public class Interface {
                     cadastro.deleteAluno(alunoDelete);
                     break;
                 }
+
                 case SAIR:{
                     continuar = false;
                     System.out.println("Obrigado por Usar.");
                     System.out.println("Encerrando......");
                     break;
                 }
+
                 case INVALIDO:{
                     System.out.println("Opção inválida.");
                     break;
                 }
             }
-
-
-
-
         }
         scanner.close();
     }
