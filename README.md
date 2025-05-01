@@ -1,7 +1,7 @@
 <h1>Os projetos que estão nesse repositórios</h1>
 <p>Os projetos são:</p>
 <ul tipy="circle">
-  <li><strong></strong><em>Projeto Fibonacci</em></strong></li>
+  <li><strong><em>Projeto Fibonacci</em></strong></li>
   <p>  A qual tem 3 tipos de métodos para se fazer os calculos fibonacci, os quais são:</p>
   <ul>
     <li>Recursiva Simples</li>
