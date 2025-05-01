@@ -2,7 +2,7 @@
 <p>Os projetos são:</p>
 <ul tipy="circle">
   <li>Projeto Fibonacci</li>
-  <p>A qual tem 3 tipos de métodos para se fazer os calculos fibonacci, os quais são:</p>
+  <p style="text-ident: 10px">A qual tem 3 tipos de métodos para se fazer os calculos fibonacci, os quais são:</p>
   <ul>
     <li>Recursiva Simples</li>
     <li>Com Memoização</li>
