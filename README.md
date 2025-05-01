@@ -1,6 +1,6 @@
 <h1>Os projetos que estão nesse repositórios</h1>
 <p>Os projetos são:</p>
-<ul>
+<ul tipy="circle">
   <li>Projeto Fibonacci</li>
   <p>A qual tem 3 tipos de métodos para se fazer os calculos fibonacci, os quais são:</p>
   <ul>
@@ -8,6 +8,8 @@
     <li>Com Memoização</li>
     <li>Iterativa</li>
   </ul>
+  <br>
+  
   <li>Projeto de Gerenciamento de Tarefas</li>
   
   <br>
