@@ -11,6 +11,7 @@ public class CadastroAluno {
     public void adicionarAluno(String aluno, int idade, String curso){
         Aluno novoAluno = new Aluno(proximoId++, aluno, idade, curso);
         alunos.add(novoAluno);
+        salvaremArquivo();
         System.out.println("Aluno adicionado com sucesso. ");
     }
 
@@ -41,6 +42,7 @@ public class CadastroAluno {
         if(!encontrado) {
             System.out.println("Aluno não encontrado.");
         }
+        salvaremArquivo();
     }
 
     public void deleteAluno(int id){
@@ -50,6 +52,7 @@ public class CadastroAluno {
         }else {
             System.out.println("O aluno com a matrícula " + id + " não encontrado.");
         }
+        salvaremArquivo();
     }
 
     private void salvaremArquivo(){
