@@ -9,25 +9,24 @@ public enum Metodos {
     INVALIDO;
 
     public static Metodos fromCodigo(int codigo){
-         switch (codigo){
-            case 1:{
-                return ADICIONAR;
-            }
-            case 2:{
-                return CONSULTAR;
-            }
-            case 3:{
-                return ATUALIZAR;
-            }
-            case 4:{
-                return DELETAR;
-            }
-            case 5:{
-                return SAIR;
-            }
-            default:{
-                return INVALIDO;
-            }
-        }
+         return switch (codigo) {
+             case 1 -> ADICIONAR;
+
+
+             case 2 -> CONSULTAR;
+
+
+             case 3 -> ATUALIZAR;
+
+
+             case 4 -> DELETAR;
+
+
+             case 5 -> SAIR;
+
+
+             default -> INVALIDO;
+
+         };
     }
 }
