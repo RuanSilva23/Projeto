@@ -2,6 +2,7 @@ package Cadastro_de_Aluno;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 public class CadastroAluno {
     private List<Aluno> alunos = new ArrayList<>();
@@ -49,5 +50,18 @@ public class CadastroAluno {
         }else {
             System.out.println("O aluno com a matrícula " + id + " não encontrado.");
         }
+    }
+
+    private void salvaremArquivo(){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("alunos.txt"))){
+            for(Aluno a : alunos){
+                String linha = String.format("%d;%s;%d;%s", a.getId(), a.getAluno(), a.getIdade(), a.getCurso());
+                writer.write(linha);
+                writer.newLine();
+            }
+        }catch (IOException e){
+            System.out.println("Erro ao salvar o arquivo: " + e.getMessage());
+        }
+
     }
 }
