@@ -10,7 +10,14 @@
   </ul>
   <li>Projeto de Gerenciamento de Tarefas</li>
   
-
+  <br>
   <li>Projeto de Cadastramento de Alunos</li>
   <p>O qual tem o método CRUD e com cadastramento em arquivo txt. </p>
+  <br>
+  
+  <li>Projeto de uma Conta de Banco</li>
+  <p>O qual ainda não comecei a organizar e a cria-lo, porém ainda irei começá-lo.</p>
+  <p>Em andamento........</p>
+
+  
 </ul>
