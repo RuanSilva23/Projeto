@@ -90,4 +90,8 @@ public class CadastroAluno {
             System.out.println("Erro ao abrir o arquivo " + e.getMessage());
         }
     }
+
+    public List<Aluno> getAlunos(){
+        return new ArrayList<>(alunos);
+    }
 }
