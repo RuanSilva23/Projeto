@@ -14,6 +14,8 @@ public class TelaConsultarAluno extends JDialog {
 
         List<Aluno> alunos = cadastro.getAlunos();
 
+
+
         String[] colunas = {"ID", "Nome", "Idade", "Curso"};
         DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
 

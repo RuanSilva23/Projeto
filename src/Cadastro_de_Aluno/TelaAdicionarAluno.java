@@ -15,6 +15,10 @@ public class TelaAdicionarAluno extends JDialog {
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 
+        JLabel tituload = new JLabel("Cadastro de Novo Aluno", JLabel.CENTER);
+        tituload.setFont(new Font("Arial", Font.BOLD, 15));
+        tituload.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
+
         JTextField campoNome = new JTextField();
         JTextField campoIdade = new JTextField();
         JTextField campoCurso = new JTextField();
@@ -57,6 +61,12 @@ public class TelaAdicionarAluno extends JDialog {
             }
 
         });
+
+        setLayout(new BorderLayout());
+        add(tituload, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
+
+
         add(panel);
     }
 }

@@ -12,9 +12,13 @@ public class InterfaceGrafica extends JFrame {
         cadastro.carregardoArquivo();
 
         setTitle("Sistema de Cadastro de Aluno");
-        setSize(400, 300);
+        setSize(400, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+
+        JLabel titulo = new JLabel("Cadastro de Alunos", JLabel.CENTER);
+        titulo.setFont(new Font("Arial", Font.BOLD, 20));
+        titulo.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
 
 
         JPanel painel = new JPanel();
@@ -28,13 +32,21 @@ public class InterfaceGrafica extends JFrame {
         JButton btnRemover = new JButton("Remover Aluno");
         JButton btnSair = new JButton("Sair");
 
-        painel.add(btnAdicionar);
-        painel.add(btnConsultar);
-        painel.add(btnAtualizar);
-        painel.add(btnRemover);
-        painel.add(btnSair);
+        btnAdicionar.setToolTipText("Cadastrar um novo aluno");
+        btnConsultar.setToolTipText("Visualizar todos os alunos");
+        btnAtualizar.setToolTipText("Alterar dados do aluno");
+        btnRemover.setToolTipText("Remover dados do aluno");
+        btnSair.setToolTipText("Fechar o sistema");
 
-        add(painel);
+
+        JButton[] botoes = {btnAdicionar, btnConsultar, btnAtualizar, btnRemover, btnSair};
+        for (JButton btn : botoes){
+            btn.setFont(new Font("Arial", Font.PLAIN, 16));
+            btn.setBackground(new Color(200,220,255));
+            painel.add(btn);
+        }
+
+
 
         btnAdicionar.addActionListener(e -> {
             new TelaAdicionarAluno(this, cadastro).setVisible(true);
@@ -49,6 +61,10 @@ public class InterfaceGrafica extends JFrame {
             new TelaRemoverAluno(this, cadastro).setVisible(true);
         });
         btnSair.addActionListener(e -> System.exit(0));
+
+        setLayout(new BorderLayout());
+        add(titulo, BorderLayout.NORTH);
+        add(painel, BorderLayout.CENTER);
 
 
     }

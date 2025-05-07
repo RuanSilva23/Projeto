@@ -6,12 +6,16 @@ import java.awt.*;
 public class TelaRemoverAluno extends JDialog {
     public TelaRemoverAluno(JFrame parent, CadastroAluno cadastro){
         super(parent, "Remover Aluno", true);
-        setSize(300,150);
+        setSize(300,200);
         setLocationRelativeTo(parent);
 
         JPanel panel = new JPanel(new GridLayout(3,1,10,10));
 
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel tituloremover = new JLabel("Exclusão de Cadastro de Aluno", JLabel.CENTER);
+        tituloremover.setFont(new Font("Arial", Font.BOLD, 13));
+        tituloremover.setBorder(BorderFactory.createEmptyBorder(15,10,5,10));
 
         JTextField campoId = new JTextField();
 
@@ -35,6 +39,9 @@ public class TelaRemoverAluno extends JDialog {
             }
         });
 
+        setLayout(new BorderLayout());
+        add(tituloremover, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
 
     }
 }

@@ -6,10 +6,16 @@ import java.awt.*;
 public class TelaAtualizarAluno extends JDialog {
     public TelaAtualizarAluno(JFrame parent, CadastroAluno cadastro){
         super(parent, "Atualizar Aluno", true);
-        setSize(350,300);
+        setSize(400,300);
         setLocationRelativeTo(parent);
 
         JPanel panel = new JPanel(new GridLayout(6,1,10,10));
+
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel tituloatualizar = new JLabel("Atualização de Cadastro", JLabel.CENTER);
+        tituloatualizar.setFont(new Font("Arial", Font.BOLD, 15));
+        tituloatualizar.setBorder(BorderFactory.createEmptyBorder(15,10,10,10));
 
         JTextField campoId = new JTextField();
         JTextField campoNome = new JTextField();
@@ -57,5 +63,9 @@ public class TelaAtualizarAluno extends JDialog {
                 JOptionPane.showMessageDialog(this, "ID e Idade precisam ser números válidos.");
             }
         });
+
+        setLayout(new BorderLayout());
+        add(tituloatualizar, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
     }
 }
