@@ -24,7 +24,7 @@ public class TelaAdicionarAluno extends JDialog {
         setLayout(new BorderLayout());
     }
 
-    
+
     private void inicializarComponentes() {
         JLabel titulo = criarTitulo("Cadastro de Novo Aluno");
 
