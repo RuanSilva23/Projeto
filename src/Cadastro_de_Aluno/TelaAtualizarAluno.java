@@ -4,68 +4,96 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TelaAtualizarAluno extends JDialog {
-    public TelaAtualizarAluno(JFrame parent, CadastroAluno cadastro){
+    private final JTextField campoId = new JTextField();
+    private final JTextField campoNome = new JTextField();
+    private final JTextField campoIdade = new JTextField();
+    private final JTextField campoCurso = new JTextField();
+    private final CadastroAluno cadastro;
+
+    public TelaAtualizarAluno(JFrame parent, CadastroAluno cadastro) {
         super(parent, "Atualizar Aluno", true);
-        setSize(400,300);
+        this.cadastro = cadastro;
+
+        configurarJanela(parent);
+        inicializarComponentes();
+    }
+
+
+    private void configurarJanela(JFrame parent) {
+        setSize(400, 300);
         setLocationRelativeTo(parent);
+        setLayout(new BorderLayout());
+    }
 
-        JPanel panel = new JPanel(new GridLayout(6,1,10,10));
 
-        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    private void inicializarComponentes() {
+        JLabel titulo = criarTitulo("Atualização de Cadastro");
 
-        JLabel tituloatualizar = new JLabel("Atualização de Cadastro", JLabel.CENTER);
-        tituloatualizar.setFont(new Font("Arial", Font.BOLD, 15));
-        tituloatualizar.setBorder(BorderFactory.createEmptyBorder(15,10,10,10));
+        JPanel painel = new JPanel(new GridLayout(8, 1, 10, 10));
 
-        JTextField campoId = new JTextField();
-        JTextField campoNome = new JTextField();
-        JTextField campoIdade = new JTextField();
-        JTextField campoCurso = new JTextField();
+        painel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        panel.add(new JLabel("ID do Aluno a Atualizar: "));
-        panel.add(campoId);
+        painel.add(new JLabel("ID do Aluno a Atualizar: "));
+        painel.add(campoId);
 
-        panel.add(new JLabel("Novo Nome: "));
-        panel.add(campoNome);
+        painel.add(new JLabel("Novo Nome: "));
+        painel.add(campoNome);
 
-        panel.add(new JLabel("Nova Idade do Aluno: "));
-        panel.add(campoIdade);
+        painel.add(new JLabel("Nova Idade do Aluno: "));
+        painel.add(campoIdade);
 
-        panel.add(new JLabel("O Curso do Aluno: "));
-        panel.add(campoCurso);
+        painel.add(new JLabel("O Curso do Aluno: "));
+        painel.add(campoCurso);
 
         JButton btnAtualizar = new JButton("Atualizar");
-        panel.add(btnAtualizar);
+        btnAtualizar.addActionListener(e -> atualizarAluno());
+        painel.add(btnAtualizar);
 
-        add(panel);
-
-        btnAtualizar.addActionListener(e -> {
-            try{
-                int id = Integer.parseInt(campoId.getText().trim());
-                String nome = campoNome.getText().trim();
-                int idade = Integer.parseInt(campoIdade.getText().trim());
-                String curso = campoCurso.getText().trim();
-
-                if (nome.isEmpty() || curso.isEmpty()){
-                    JOptionPane.showMessageDialog(this, "O Nome e o Curso não podem ficar em branco.");
-                    return;
-                }
-
-                if (idade < 0){
-                    JOptionPane.showMessageDialog(this,"A Idade não pode ter valor negativo.");
-                    return;
-                }
-
-                cadastro.atualizarAluno(id, nome, idade, curso);
-                JOptionPane.showMessageDialog(this,"Aluno atualizado com sucesso!!");
-                dispose();
-            }catch (NumberFormatException ex){
-                JOptionPane.showMessageDialog(this, "ID e Idade precisam ser números válidos.");
-            }
-        });
-
-        setLayout(new BorderLayout());
-        add(tituloatualizar, BorderLayout.NORTH);
-        add(panel, BorderLayout.CENTER);
+        add(titulo, BorderLayout.NORTH);
+        add(painel, BorderLayout.CENTER);
     }
+
+
+    private JLabel criarTitulo(String texto) {
+        JLabel titulo = new JLabel(texto, JLabel.CENTER);
+        titulo.setFont(new Font("Arial", Font.BOLD, 14));
+        titulo.setBorder(BorderFactory.createEmptyBorder(15,10,10,10));
+        return titulo;
+    }
+
+
+    private void atualizarAluno(){
+        String idAluno = campoId.getText().trim();
+        String nome = campoNome.getText().trim();
+        String idadeAluno = campoIdade.getText().trim();
+        String curso = campoCurso.getText().trim();
+
+        if (idAluno.isEmpty() || nome.isEmpty() || idadeAluno.isEmpty() || curso.isEmpty()){
+            exibirMensagem("Todos os campos são obrigatórios.");
+            return;
+        }
+
+        try {
+            int id = Integer.parseInt(idAluno);
+            int idade = Integer.parseInt(idadeAluno);
+
+
+            if (idade < 0){
+                exibirMensagem("A idade não pode ter valor negativo.");
+                return;
+            }
+
+            cadastro.atualizarAluno(id, nome, idade, curso);
+            exibirMensagem("Aluno atualizado com sucesso.");
+            dispose();
+        }catch (NumberFormatException ex){
+            exibirMensagem("ID e idade devem ser valores válidos.");
+        }
+    }
+
+
+    private void exibirMensagem(String mensagem){
+        JOptionPane.showMessageDialog(this, mensagem);
+    }
+
 }
