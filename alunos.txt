@@ -1,2 +1,3 @@
 1;Ruan Silva;22;Analise e Desenvolvimento de Sistemas
 2;Maria Luisa;16;Ensino Médio
+3;Angela;51;Ensino Fundamental
