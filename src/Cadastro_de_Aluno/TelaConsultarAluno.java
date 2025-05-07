@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
-import java.util.Objects;
 
 public class TelaConsultarAluno extends JDialog {
     public TelaConsultarAluno(JFrame parent, CadastroAluno cadastro){
