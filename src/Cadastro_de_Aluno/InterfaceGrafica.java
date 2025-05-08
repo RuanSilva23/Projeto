@@ -47,7 +47,6 @@ public class InterfaceGrafica extends JFrame {
         }
 
 
-
         btnAdicionar.addActionListener(e -> {
             new TelaAdicionarAluno(this, cadastro).setVisible(true);
         });
@@ -68,6 +67,7 @@ public class InterfaceGrafica extends JFrame {
 
 
     }
+
 
     public static void main(String[] args){
         SwingUtilities.invokeLater(() -> {
