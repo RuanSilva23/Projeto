@@ -9,7 +9,7 @@ public class ExibicaoDoMenu {
         System.out.println("2 - Consultar listar dos alunos ");
         System.out.println("3 - Atualizar cadastro do aluno ");
         System.out.println("4 - Remover cadastro do aluno ");
-        System.out.println("5 - Sair ");
+        System.out.println("0 - Sair ");
         System.out.print("Opção escolhida: ");
          return scanner.nextInt();
 
