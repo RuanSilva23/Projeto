@@ -35,7 +35,7 @@ public class TelaRemoverAluno extends JDialog {
         painel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 
-        painel.add(new JLabel("Digite o ID a qual será Removido: "));
+        painel.add(new JLabel("Digite o ID a qual será Removido:"));
         painel.add(campoId);
 
 
