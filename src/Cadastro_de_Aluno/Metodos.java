@@ -22,7 +22,7 @@ public enum Metodos {
              case 4 -> DELETAR;
 
 
-             case 5 -> SAIR;
+             case 0 -> SAIR;
 
 
              default -> INVALIDO;
