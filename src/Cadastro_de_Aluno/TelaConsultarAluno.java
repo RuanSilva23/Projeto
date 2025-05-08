@@ -6,19 +6,25 @@ import java.awt.*;
 import java.util.List;
 
 public class TelaConsultarAluno extends JDialog {
-    public TelaConsultarAluno(JFrame parent, CadastroAluno cadastro){
+    public TelaConsultarAluno(JFrame parent, CadastroAluno cadastro) {
         super(parent, "Lista de Alunos", true);
-        setSize(500,300);
+        configurarJanela(parent);
+        inicializarTabela(cadastro.getAlunos());
+    }
+
+
+    private void configurarJanela(JFrame parent) {
+        setSize(500, 300);
         setLocationRelativeTo(parent);
+        setLayout(new BorderLayout());
+    }
 
-        List<Aluno> alunos = cadastro.getAlunos();
 
-
-
+    private void inicializarTabela(List<Aluno> alunos) {
         String[] colunas = {"ID", "Nome", "Idade", "Curso"};
         DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
 
-        for (Aluno a : alunos){
+        for (Aluno a : alunos) {
             Object[] linha = {
                     a.getId(),
                     a.getAluno(),
@@ -31,8 +37,6 @@ public class TelaConsultarAluno extends JDialog {
         JTable tabela = new JTable(modelo);
         JScrollPane scroll = new JScrollPane(tabela);
         add(scroll, BorderLayout.CENTER);
-
-
 
     }
 }
