@@ -19,9 +19,7 @@ public class Tabuada {
                 i++;
             } while (i <= y);
             int continuar = continuarouNao(scanner);
-            if (continuar == 1){
-                continue;
-            }else{
+            if (continuar == 0){
                 continua = false;
             }
         }
