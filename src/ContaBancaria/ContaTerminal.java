@@ -9,6 +9,7 @@ public class ContaTerminal {
         System.out.println("      Banco Mais Você      ");
         System.out.println("Crie sua conta agora ");
 
+        
         System.out.print("Por favor, Digite sua Agência: ");
         String agencia = scanner.nextLine();
 
@@ -17,6 +18,7 @@ public class ContaTerminal {
         int conta = scanner.nextInt();
         scanner.nextLine();
 
+        
         System.out.print("Digite seu nome: ");
         String nomes = scanner.nextLine();
 
