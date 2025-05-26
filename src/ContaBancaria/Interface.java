@@ -5,24 +5,23 @@ import java.util.Scanner;
 public class Interface {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String nome = "Ruan Silva";
-        String tipoDeConta = "Conta corrente";
-        int agencia = 1010;
-        String conta = "25252-5";
-        double saldo = 2500.00;
+        Usuario usuario = new Usuario();
+
+        System.out.println("Cadastramento de conta");
+        System.out.print("Nome do Titular: ");
+        String nome = scanner.nextLine();
+        System.out.print("Número da Conta: ");
+        String conta = scanner.nextLine();
+        System.out.print("Valor do deposito inicial: ");
+        double saldoInicial = scanner.nextDouble();
+
+        usuario.setNome(nome);
+        usuario.setConta(conta);
+        usuario.setSaldo(saldoInicial);
 
         int opcao = 0;
 
-        System.out.println("**********************");
-        System.out.println("\nBanco Mais Você");
-        System.out.println("Dados Castrados:");
-        System.out.println("Nome: " + nome);
-        System.out.println("Agência: " + agencia);
-        System.out.println("Conta: " + conta);
-        System.out.println("Tipo de conta: " + tipoDeConta);
-        System.out.println("Saldo: R$2500.00");
-        System.out.println("\n**********************");
-
+        usuario.exibircadastro();
 
         String menu = """
                 Opções:
@@ -38,28 +37,33 @@ public class Interface {
             System.out.print("Opção escolhida: ");
             opcao = scanner.nextInt();
 
+
             switch (opcao){
                 case 1:{
-                    System.out.println("O saldo atual é de R$" + saldo);
+                    usuario.exibicaoSaldo();
                     break;
                 }
                 case 2:{
                     System.out.print("Valor do deposito: R$");
                     double deposito = scanner.nextDouble();
-                    saldo += deposito;
+                    usuario.adicaoSaldo(deposito);
 
+                    double saldo = usuario.getSaldo();
                     System.out.println("Saldo atualizado: R$" + saldo);
+
+
 
                     break;
                 }
                 case 3:{
                     System.out.print("Valor do saque: R$");
                     double saque = scanner.nextDouble();
-
+                    double saldo = usuario.getSaldo();
                     if (saldo >= saque) {
                         saldo = saldo - saque;
 
                         System.out.println("Saldo atualizado: R$" + saldo);
+                        usuario.setSaldo(saldo);
 
                     }else{
                         System.out.println("O valor para saque não está disponivel.");
