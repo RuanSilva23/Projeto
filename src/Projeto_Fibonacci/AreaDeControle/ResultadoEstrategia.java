@@ -1,4 +1,4 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.AreaDeControle;
 
 public class ResultadoEstrategia implements Comparable<ResultadoEstrategia> {
     private final String nome;

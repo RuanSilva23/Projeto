@@ -1,4 +1,9 @@
-package Cadastro_de_Aluno;
+package Cadastro_de_Aluno.Interface;
+
+import Cadastro_de_Aluno.AreaDeProcessamento.CadastroAluno;
+import Cadastro_de_Aluno.AreaDeProcessamento.ExibicaoDoMenu;
+import Cadastro_de_Aluno.AreaDeProcessamento.Mensagem;
+import Cadastro_de_Aluno.AreaDeProcessamento.Metodos;
 
 import java.util.Scanner;
 

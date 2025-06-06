@@ -1,6 +1,8 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.AreaDosMetodos;
 
-public class FibonacciRecursivaSimples implements FibonacciStrategy{
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
+
+public class FibonacciRecursivaSimples implements FibonacciStrategy {
     @Override
     public int calcular(int n) {
 

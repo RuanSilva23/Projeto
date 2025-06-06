@@ -1,3 +1,5 @@
+package ProjetosSimples;
+
 import java.util.Scanner;
 
 public class Aproveitamento {
@@ -13,22 +15,22 @@ public class Aproveitamento {
             System.out.println("Seu aproveitameto foi: ");
 
             if (mediaTotal > 9) {
-                System.out.println("Aproveitamento A ");
+                System.out.println("ProjetosSimples.Aproveitamento A ");
 
             } else if (mediaTotal < 9 && mediaTotal >= 7) {
-                System.out.println("Aproveitamento B ");
+                System.out.println("ProjetosSimples.Aproveitamento B ");
 
             } else if (mediaTotal < 7 && mediaTotal >= 6) {
-                System.out.println("Aproveitamento C ");
+                System.out.println("ProjetosSimples.Aproveitamento C ");
 
             } else if (mediaTotal < 6 && mediaTotal >= 5) {
-                System.out.println("Aproveitamento D ");
+                System.out.println("ProjetosSimples.Aproveitamento D ");
 
             } else if (mediaTotal < 5 && mediaTotal >= 4) {
-                System.out.println("Aproveitamento E ");
+                System.out.println("ProjetosSimples.Aproveitamento E ");
 
             } else {
-                System.out.println("Aproveitamento F ");
+                System.out.println("ProjetosSimples.Aproveitamento F ");
             }
 
             if (mediaTotal > 6) {
@@ -50,7 +52,7 @@ public class Aproveitamento {
 
     public static double nota1(Scanner scanner){
         System.out.println("=======================");
-        System.out.println("Aproveitamento do Aluno");
+        System.out.println("ProjetosSimples.Aproveitamento do Aluno");
         System.out.println("=======================");
         System.out.print("A 1° Nota: ");
         int nota1 = scanner.nextInt();

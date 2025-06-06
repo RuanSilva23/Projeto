@@ -1,4 +1,4 @@
-package Cadastro_de_Aluno;
+package Cadastro_de_Aluno.AreaDeProcessamento;
 
 public enum Metodos {
     ADICIONAR,

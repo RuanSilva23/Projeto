@@ -1,3 +1,5 @@
+package ProjetosSimples;
+
 import java.util.Scanner;
 
 public class Tabuada {
@@ -6,7 +8,7 @@ public class Tabuada {
         boolean continua = true;
 
         while(continua) {
-            System.out.println("\n--------Tabuada---------");
+            System.out.println("\n--------ProjetosSimples.Tabuada---------");
 
             int x = selecionadordaTabuada(scanner);
 

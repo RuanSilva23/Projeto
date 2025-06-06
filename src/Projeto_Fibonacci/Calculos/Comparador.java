@@ -1,4 +1,9 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.Calculos;
+
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciComMemo;
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciIterativa;
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciRecursivaSimples;
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
 
 import java.util.Arrays;
 

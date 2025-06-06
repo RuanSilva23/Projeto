@@ -1,4 +1,6 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.AreaDosMetodos;
+
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
 
 public class FibonacciIterativa implements FibonacciStrategy {
     public int calcular(int n){

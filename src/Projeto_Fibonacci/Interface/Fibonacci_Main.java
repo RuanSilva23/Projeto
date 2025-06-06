@@ -1,4 +1,12 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.Interface;
+
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
+import Projeto_Fibonacci.AreaDeControle.MetodosFibo;
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciComMemo;
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciIterativa;
+import Projeto_Fibonacci.AreaDosMetodos.FibonacciRecursivaSimples;
+import Projeto_Fibonacci.Calculos.BenchmarkFibonacci;
+import Projeto_Fibonacci.Calculos.Comparador;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,7 +23,7 @@ public class Fibonacci_Main {
             FibonacciStrategy estrategia = null;
 
 
-            MetodosFibo metodo  = Projeto_Fibonacci.MetodosFibo.fromCodigo(opcao);
+            MetodosFibo metodo  = MetodosFibo.fromCodigo(opcao);
 
 
 

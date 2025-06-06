@@ -1,4 +1,7 @@
-package Cadastro_de_Aluno;
+package Cadastro_de_Aluno.TelasDeExibicao;
+
+import Cadastro_de_Aluno.AreaDeProcessamento.Aluno;
+import Cadastro_de_Aluno.AreaDeProcessamento.CadastroAluno;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

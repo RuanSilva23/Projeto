@@ -1,33 +1,39 @@
 package ContaBancaria.Usuario;
 
 public class UsuarioDaConta {
-    private String Nome;
-    private String TipoDaConta;
-    private int agencia;
-    private int numeroConta;
+    private String nome;
+    private String CPF;
+    private String tipodaConta;
+    private int Cep;
+
+    public UsuarioDaConta(String nome, String CPF, String tipodaConta, int cep) {
+        this.nome = nome;
+        this.CPF = CPF;
+        this.tipodaConta = tipodaConta;
+        Cep = cep;
+    }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public void setNome(String nome) {
-        Nome = nome;
+    public String getCPF() {
+        return CPF;
     }
 
-    public int getNumeroConta() {
-        return numeroConta;
+    public String getTipodaConta() {
+        return tipodaConta;
     }
 
-    public int getAgencia() {
-        return agencia;
+    public int getCep() {
+        return Cep;
     }
 
-    public String getTipoDaConta() {
-        return TipoDaConta;
-    }
-
-    public int NumeroConta(int numero){
-        this.numeroConta = numero;
-        return numero;
+    @Override
+    public String toString() {
+        return "Conta " + tipodaConta +
+                "Nome: " + nome +
+                "Cpf: " + CPF
+                ;
     }
 }

@@ -1,4 +1,4 @@
-package Cadastro_de_Aluno;
+package Cadastro_de_Aluno.AreaDeProcessamento;
 
 public class Mensagem {
     public static void alunoNaopodeVazio(){

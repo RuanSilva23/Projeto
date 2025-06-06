@@ -1,4 +1,10 @@
-package Cadastro_de_Aluno;
+package Cadastro_de_Aluno.Interface;
+
+import Cadastro_de_Aluno.AreaDeProcessamento.CadastroAluno;
+import Cadastro_de_Aluno.TelasDeExibicao.TelaAdicionarAluno;
+import Cadastro_de_Aluno.TelasDeExibicao.TelaAtualizarAluno;
+import Cadastro_de_Aluno.TelasDeExibicao.TelaConsultarAluno;
+import Cadastro_de_Aluno.TelasDeExibicao.TelaRemoverAluno;
 
 import javax.swing.*;
 import java.awt.*;

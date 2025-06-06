@@ -1,3 +1,5 @@
+package ProjetosSimples;
+
 import java.util.Scanner;
 
 public class Imc {

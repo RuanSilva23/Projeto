@@ -1,4 +1,4 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.AreaDeControle;
 
 public enum MetodosFibo {
     RECURSIVO_SIMPLES,

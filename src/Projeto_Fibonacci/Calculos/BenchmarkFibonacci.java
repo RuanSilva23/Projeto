@@ -1,4 +1,6 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.Calculos;
+
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
 
 public class BenchmarkFibonacci {
     private FibonacciStrategy estrategia;

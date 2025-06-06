@@ -1,4 +1,6 @@
-package Projeto_Fibonacci;
+package Projeto_Fibonacci.AreaDosMetodos;
+
+import Projeto_Fibonacci.AreaDeControle.FibonacciStrategy;
 
 import java.util.Arrays;
 
