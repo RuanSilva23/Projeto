@@ -1,16 +1,30 @@
 package ContaBancaria.Usuario;
 
+import java.time.LocalDate;
+import java.util.Objects;
+
 public class Cliente {
     private String nome;
-    private int CPF;
+    private String CPF;
     private String endereco;
-    private String dataDeNascimento;
+    private LocalDate dataDeNascimento;
+    private String email;
+    private String senha;
+
+    public Cliente(String nome, String CPF, String endereco, LocalDate dataDeNascimento, String email, String senha) {
+        this.nome = nome;
+        this.CPF = CPF;
+        this.endereco = endereco;
+        this.dataDeNascimento = dataDeNascimento;
+        this.email = email;
+        this.senha = senha;
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
@@ -18,7 +32,29 @@ public class Cliente {
         return endereco;
     }
 
-    public String getDataDeNascimento() {
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public LocalDate getDataDeNascimento() {
         return dataDeNascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public boolean autenticador(String senha){
+        if (Objects.equals(senha, getSenha())){
+            System.out.println("Senha autenticada com sucesso.");
+            return true;
+        }else {
+            System.out.println("Senha incorreta. Tente novamente.");
+            return false;
+        }
     }
 }
