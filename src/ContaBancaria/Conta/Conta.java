@@ -4,7 +4,9 @@ import ContaBancaria.Usuario.Cliente;
 
 public class Conta {
     private String agencia;
-    private int numeroDaConta;
-    private Cliente cliente;
+    private String numeroDaConta;
+    private Cliente titularDaConta;
+    private double saldo;
+
 
 }
