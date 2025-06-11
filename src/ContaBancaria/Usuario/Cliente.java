@@ -8,7 +8,7 @@ public class Cliente {
     private String CPF;
     private String endereco;
     private LocalDate dataDeNascimento;
-    private String email;
+    private  String email;
     private String senha;
 
     public Cliente(String nome, String CPF, String endereco, LocalDate dataDeNascimento, String email, String senha) {
