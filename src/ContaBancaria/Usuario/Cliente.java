@@ -50,10 +50,8 @@ public class Cliente {
 
     public boolean autenticador(String senha){
         if (Objects.equals(senha, getSenha())){
-            System.out.println("Senha autenticada com sucesso.");
             return true;
         }else {
-            System.out.println("Senha incorreta. Tente novamente.");
             return false;
         }
     }
